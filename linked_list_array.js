@@ -29,7 +29,7 @@ add(value){
   }
 
 addAll(){
-  for (let i = 0; i < this.input.length-1; i++){
+  for (let i = 0; i < this.input.length; i++){
     this.add(this.input[i])
   }
 }
@@ -56,7 +56,12 @@ remove(node){
  }
 
  getHead(){
-   return (this.head.data)
+  // return (this.head.data)
+   let head = {
+     data: this.head.data,
+     next: this.input[0].next
+   }
+  return head;
  }
 
  getTail(){
@@ -66,6 +71,7 @@ remove(node){
    }
   return tail;
  }
+
  getLength(){
    return this._length;
  }
@@ -76,8 +82,8 @@ let list = new LinkedList([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 list.addAll()
 list.print()
 list.remove({data:1 ,next:2})
-console.log(list.getLength());
-console.log(list.getHead());
-console.log(list.getTail());
+console.log(`Length = ${list.getLength()}`);
+console.log(`Head = ${JSON.stringify(list.getHead())}`);
+console.log(`Tail = ${JSON.stringify(list.getTail())}`);
 //list.print()
 //console.log(list)

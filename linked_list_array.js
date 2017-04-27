@@ -35,20 +35,21 @@ addAll(){
 }
 
 remove(node){
-  let current, next = node.next
-  if(this.head === node){
-      this.head = this.head.next;
-      node.next = null
-      return next
-    }
-    current = this.head
-    while(current.next){
-      if(current.next === node){
-        current.next = node.next;
-        return next
-      }
-      current = current.next
-    }
+  this.input.splice(node-1,1)
+  // let current, next = node.next
+  // if(this.head === node){
+  //     this.head = this.head.next;
+  //     node.next = null
+  //     return next
+  //   }
+  //   current = this.head
+  //   while(current.next){
+  //     if(current.next === node){
+  //       current.next = node.next;
+  //       return next
+  //     }
+  //     current = current.next
+  //   }
   }
 
  print(){
@@ -79,6 +80,7 @@ remove(node){
 }
 
 let list = new LinkedList([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+list.remove(5)
 list.addAll()
 list.print()
 console.log(`Length = ${list.getLength()}`);

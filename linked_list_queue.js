@@ -37,26 +37,10 @@ push(value){
   this.input.push(value)
 }
 
-pop(value){
-  this.input.shift(value)
+pop(){
+  this.input.shift()
 }
 
-remove(node){
-  let current, next = node.next
-  if(this.head === node){
-      this.head = this.head.next;
-      node.next = null
-      return next
-    }
-    current = this.head
-    while(current.next){
-      if(current.next === node){
-        current.next = node.next;
-        return next
-      }
-      current = current.next
-    }
-  }
 
  print(){
    console.log(JSON.stringify(this.head))

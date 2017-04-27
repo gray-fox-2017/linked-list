@@ -81,7 +81,6 @@ remove(node){
 let list = new LinkedList([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 list.addAll()
 list.print()
-list.remove({data:1 ,next:2})
 console.log(`Length = ${list.getLength()}`);
 console.log(`Head = ${JSON.stringify(list.getHead())}`);
 console.log(`Tail = ${JSON.stringify(list.getTail())}`);

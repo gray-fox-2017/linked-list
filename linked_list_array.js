@@ -25,7 +25,7 @@ add(value){
       }
       current.next = node
     }
-    return node;
+    return JSON.stringify(node);
   }
 
 addAll(){
@@ -35,25 +35,26 @@ addAll(){
 }
 
 remove(node){
-  let current, value = node.value
+  let current, next = node.next
   if(this.head === node){
       this.head = this.head.next;
       node.next = null
-      return value
+      return next
     }
     current = this.head
     while(current.next){
       if(current.next === node){
         current.next = node.next;
-        return value
+        return next
       }
       current = current.next
     }
   }
 
  print(){
-   console.log(this.head)
+   console.log(JSON.stringify(this.head))
  }
+
  getHead(){
    return (this.head.data)
  }
@@ -74,7 +75,9 @@ remove(node){
 let list = new LinkedList([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 list.addAll()
 list.print()
+list.remove({data:1 ,next:2})
 console.log(list.getLength());
 console.log(list.getHead());
 console.log(list.getTail());
+//list.print()
 //console.log(list)
